@@ -1,0 +1,6 @@
+{
+   "title" : "test-note4",
+   "text" : "test-text4",
+   "pinned" : true,
+   "createdBy": "test"
+}
