@@ -1,0 +1,16 @@
+<div class="welcome-text">
+    <p *ngIf="!isAuthenticated" style="color: azure;">Welcome to Note it</p>
+
+    <button *ngIf="!isAuthenticated" routerLink="/login" class="login-btn">
+        Login
+    </button>
+</div>
+
+<p *ngIf="isAuthenticated && userFullName" class="auth-text">
+    Welcome {{ userFullName }}
+</p>
+
+
+<button *ngIf="isAuthenticated" (click)="logout()" routerLink="/login" class="logout-btn">
+    Logout
+</button>

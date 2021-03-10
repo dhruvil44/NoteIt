@@ -1,0 +1,42 @@
+<button  (click)="onNewNote()" class="addnote" id="addnote">
+    <i class="fas fa-plus"></i>
+    Add Note
+</button>
+ 
+<!--Notes-->
+<div  class="notes">
+    <div class="note" *ngFor="let note of notes">
+        <div class="tools">     
+            <!--Note tite will be disabled if the Pinned category or All category is selected-->
+            <input [(ngModel)]="note.title" (change)="updateNote(note)" [readOnly]="url=='/all' || currentNotebookId==null "
+                type="text" class="index" placeholder="Title Here" value="{{ note.title }}">
+            
+            <!-- Pinned note  -->
+            <button *ngIf="url!='/all'&& note.pinned==false"
+                   (click)="onPinNote(note)" class="pinned"><i class="fas fa-thumbtack"></i></button>
+
+            <!--Unpin Note-->
+            <button *ngIf="note.pinned==true && (url!='/all' && currentNotebookId!=null)" 
+                    (click)="onUnpinNote(note)" class="cross">
+                <i class="fas fa-times"></i></button>
+
+            <button (click)="deleteNote(note)" class="delete"><i class="fas fa-trash-alt"></i></button>
+        </div>
+        <div class="hidden"></div>
+        <!--Text area will be disabled if the Pinned category or All is selected-->
+        <textarea [(ngModel)]="note.text" (change)="updateNote(note)" placeholder="Welcome to NoteIt"
+            [readOnly]="url=='/all' || currentNotebookId==null">
+            {{ note.text }}
+        </textarea>
+    </div>
+</div>
+
+
+<!--Notes End-->
+
+
+<!--***************-->
+<!-- <div *ngFor="let note of notes">
+    <p><strong>{{ note.title }}</strong></p>
+    <p>{{ note.text }}</p>
+</div> -->

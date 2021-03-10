@@ -1,0 +1,60 @@
+
+:root {
+	--primary-color-btn: #04a2b3;
+	--header-color: #153b56;
+}
+
+header {
+	/* position: fixed; */
+	top: 0;
+	left: 0;
+	width: 100%;
+	/* background: #153b56; */
+	height: 70px;
+	display: flex;
+	z-index: 100;
+}
+
+header .logo-img {
+	max-height: 100%;
+	height: 40px;
+	margin: auto;
+	display: block; 
+}
+
+header .search-bar {
+	position: absolute;
+	/* height: 100%; */
+	right: 20px;
+}
+
+.search-bar .search-input {
+	margin-top: 20px;
+	border-radius: 20px;
+	height: 30px;
+	padding-left: 15px;
+	outline: none;
+	border-width: 0;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+	box-sizing: border-box;
+}
+
+.search-bar .search-btn {
+	margin-top: 20px;
+	height: 30px;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-radius: 20px;
+	margin-left: 10px;
+	border-width: 0;
+	outline: none;
+	cursor: pointer;
+	background-color: #04a2b3;
+	color: #e1e1e1;
+	transition: 0.15s opacity ease;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar .search-btn:hover {
+	opacity: 0.9;
+}
