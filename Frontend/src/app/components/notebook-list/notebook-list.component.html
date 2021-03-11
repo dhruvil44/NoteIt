@@ -1,53 +1,28 @@
-<!--Notebook-->
-
-<!-- <div class="mainpage">
+<section id="sidebar">
     <div class="notebooks">
-        <div class="notebook" *ngFor="let notebook of notebooks">
-            <button a routerLink="/notebook/{{ notebook.name }}">{{ notebook.name }}</button>
-            <button class="edit"><i class="fas fa-edit"></i></button>
-            <button class="delete"><i class="fas fa-trash-alt"></i></button>
-            <hr>
-            </div>
-        </div>
-    </div> -->
-<!--Notebook End-->
+        <button (click)="onNewNotebook()" class="add-notebook"><i class="fas fa-plus"></i>Add Notebook</button>
+        <ul>
+            <li>
+                <div class="notebook">
+                    <a routerLink="/">Pinned</a>
+                </div>
+            </li>
+            <li>
+                <div class="notebook">
+                    <a routerLink="/all">All</a>
+                </div>
+            </li>
+            <li *ngFor="let notebook of notebooks">
+                <div class="notebook">
+                    <i class="fas fa-book"></i>
+                    <a *ngIf="notebook.isEditing==false" (click)="selectedNotebook(notebook)" routerLink="/notebook/{{ notebook.id }}" routerLinkActive="active-link">{{ notebook.name }}</a>
+                    <input *ngIf="notebook.isEditing==true" [(ngModel)]="notebook.name" (change)="updateNotebook(notebook)" type="text" value="{{ notebook.name }}">
+                    <button *ngIf="notebook.id!=4" (click)="onEditNotebook(notebook)" class="edit"><i class="fas fa-edit"></i></button>
+                    <button *ngIf="notebook.id!=4" (click)="onDeleteNotebook(notebook)" class="delete"><i class="fas fa-trash-alt"></i></button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
 
 
-
-
-
-
-
-<button (click)="onNewNotebook()" class="addnotebook" id="addnotebook"><i class="fas fa-plus"></i>
-    Add Notebook
-</button>
-
-
-<ul>
-    <li><a routerLink="/"  style="color: #e6e6e6;">Pinned</a></li>
-</ul>
-
-<ul>
-    <li><a routerLink="/all"  style="color: #e6e6e6;">All</a></li>
-</ul>
-
-
-<ul *ngFor="let notebook of notebooks">
-    <li>
-        <div class="notebook">
-            <i class="fas fa-book"></i>    
-            <a *ngIf="notebook.isEditing==false" (click)="selectedNotebook(notebook)"
-                routerLink="/notebook/{{ notebook.id }}" routerLinkActive="active-link">
-                {{ notebook.name }}
-            </a>
-            <input *ngIf="notebook.isEditing==true" [(ngModel)]="notebook.name" (change)="updateNotebook(notebook)"
-                type="text" value="{{ notebook.name }}">
-
-
-            <button *ngIf="notebook.id!=4" (click)="onEditNotebook(notebook)" class="edit"><i
-                    class="fas fa-edit"></i></button>
-            <button *ngIf="notebook.id!=4" (click)="onDeleteNotebook(notebook)" class="delete"><i
-                    class="fas fa-trash-alt"></i></button>
-        </div>
-    </li>
-</ul>

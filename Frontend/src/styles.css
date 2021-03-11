@@ -1,311 +1,249 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
 
-* {
-  box-sizing: border-box;
-  outline: none;
+html, body {
+	height: 100%;
 }
 
 body {
-  /* background-color: rgb(171, 192, 236); */
-  background: #1a1a1a;
-  font-family: 'Poppins', sans-serif;
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0;
-  /* padding-top: 3rem; */
-  height: 100vh;
-  width: 100%;
-  /* filter: invert(1) hue-rotate(180deg); */
+	background: #1a1a1a;
+	color: #e1e1e1;
+	font-family: "Poppins", sans-serif;
 }
 
-app-root{
-  width: 100%;
+:root {
+	--primary-color-btn: #04a2b3;
+	--header-color: #153b56;
+	--sidebar-color: #131217;
 }
 
-.menu ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #3e90b1;
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-  
-.menu li {
-  float: left;
-}
-  
-.menu li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-  
-.menu li a:hover:not(.active) {
-  background-color: #111;
-}
-  
-.menu .active {
-  background-color: #267291;
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
 }
 
-.active-link{
-  background-color: #333;
-}
-/*button{ 
-  position: fixed;
-  top:60px;
-  background-color: #0074D9; 
-  color: #f2f2f2; 
-  /*float: left;
-  padding: 0.5rem 1rem; 
-  margin-right: 16px; 
-  font-size: 12px; 
-  border: none; 
-  cursor: pointer; 
-}*/
-
-.au-input{
-    line-height:25px;
-    border:1px solid #e5e5e5;
-    font-size:15px;
-    color:#666;
-    padding:0 17px;
-    /*padding-top: 5px;
-    padding-bottom: 5px;*/
-    -webkit-border-radius:3px;
-    -moz-border-radius:3px;
-    border-radius:10px;
-    -webkit-transition:all .5s ease;
-    -o-transition:all .5s ease;
-    -moz-transition:all .5s ease;
-    transition:all .5s ease
+li {
+	list-style-type: none;
 }
 
-.au-btn-submit{
-    /* position:relative; */
-    right:0;
-    min-width:95px;
-    color:#fff;
-    border:1px solid #205b8d;
-    -webkit-border-radius:3px;
-    -moz-border-radius:3px;
-    border-radius:43px;
-    background:#205b8d
+a {
+	color: white;
+	text-decoration: none;
 }
 
-/* .form-header{
-    position: fixed; 
-    top: 60px;
-    right: 0;
-    display:-webkit-box;
-    display:-webkit-flex;
-    display:-moz-box;
-    display:-ms-flexbox;
-    display:flex;
-    padding: 20px;
-} */
-.form-header{
-    position: absolute;
-    right: 0;
-    padding: 10px;
+button {
+	border-width: 0;
+	outline: none;
+	cursor: pointer;
+	background-color: transparent;
 }
 
-.addnote {
-  /* position: fixed; */
-  /* top: 60px; */
-  right:10px;
-  /* float: right; */
-  margin-top: 30px;
-  margin-left: 15px;
-  background-color: #3e90b1;
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  padding: 0.5rem 1rem; 
-  cursor: pointer;
-  padding: 20px;
+
+/*Header Section CSS*/
+header {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 70px;
+	display: flex;
+	z-index: 100;
 }
 
-.addnotebook {
-    /* position: fixed; */
-    top: 60px;
-    right: 125px;
-    background-color: #3e90b1;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    padding: 20px;
+header .logo-img {
+	max-height: 100%;
+	height: 40px;
+	margin: auto;
+	display: block; 
 }
 
-.add:active {
-  transform: scale(0.98);
+header .search-bar {
+	position: absolute;
+	left: 20px;
+}
+
+@media (max-width: 768px) {
+
+	header .logo-img {
+		margin-right: auto;
+		margin-left: 10px;
+		height: 30px;
+	}
+
+	header .search-bar {
+		position: relative;
+		right: unset;
+		margin-right: 10px;
+	}
+}
+
+.search-bar .search-input {
+	margin-top: 20px;
+	border-radius: 20px;
+	height: 30px;
+	padding-left: 15px;
+	outline: none;
+	border-width: 0;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+	box-sizing: border-box;
+}
+
+.search-bar .search-btn {
+	margin-top: 20px;
+	height: 30px;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-radius: 20px;
+	margin-left: 10px;
+	border-width: 0;
+	outline: none;
+	cursor: pointer;
+	background-color: var(--primary-color-btn);
+	color: #e1e1e1;
+	transition: 0.15s opacity ease;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar .search-btn:hover {
+	opacity: 0.9;
+}
+
+
+@media (max-width: 768px) {
+
+	.search-bar .search-input {
+		margin-top: 22.5px;
+		height: 25px;
+		padding-left: 10px;
+		font-size: 11px;
+		width: 120px;
+	}
+
+	.search-bar .search-btn {
+		margin-top: 22.5px;
+		height: 25px;
+		padding-left: 15px;
+		padding-right: 15px;
+		font-size: 12px;
+	}
+}
+/*Header Section END CSS*/
+
+
+.container {
+	height: 100%;
 }
 
 .mainpage {
-    display: flex;
-    height: 100%;
-    width : 100%;
-    padding: 25px;
-    padding-left: 0;
-    padding-top: 0;
-}
-
-.notebooks {
-    background: #000;
-    display : flex;
-    flex-direction: column;
-    box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1);
-    /* margin: 30px 20px; */
-    overflow-y: auto;
-    width: 350px;
-    min-width: 350px;
-    height: 100%;
-    padding: 20px;
-    /* position: sticky;
-    top: 70px;
-    z-index: -1; */
-}   
-
-.notebook a:visited,a:link{
-  text-decoration: none;
-  color:#e6e6e6;
-  /* display: block; */
-}
-
-.notebook a:hover{
-  background-color: #333;
-}
-
-.notebooks ul{
-  list-style-type: none;
+	display: flex;
+	height: 100%;
 }
 
 
-.notebook button{
-  background-color: transparent;
-  border: none;
-  color: rgb(0, 0, 0);
-  cursor: pointer;
-  font-size: 1rem;
-  margin-left: 0.5rem;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  float: right;
+/* Notebook Section CSS */
+.mainpage #sidebar {
+	background-color: var(--sidebar-color);
+	padding: 30px 20px;
+	height: 100%;
+	width: 350px;
+	min-width: 350px;
 }
 
-.notebook .edit{
-  /*height: 5px;
-  width: 5px;*/
-  color: rgb(0, 255, 0);
-}
-.notebook .delete{
-  /*height: 5px;
-  width: 5px;*/
-  color: rgb(255, 0, 0);
+.mainpage #sidebar .notebook input {
+	width: 65%;
+	margin-left: 4%;
+	margin-right: 6%;
+	border-radius: 7px;
+	padding-left: 5px;
+	}
+
+@media (max-width: 768px) {
+
+	.mainpage #sidebar {
+		width: 100%;
+		height: auto;
+	}
+
+	.mainpage {
+		display: block;
+	}
 }
 
-.fa-edit:before {
-  color: white;
+.mainpage #sidebar .add-notebook {
+	margin-bottom: 30px;
+	margin-left: 10px;
+	padding: 10px 20px;
+	border-radius: 5px;
+	font-size: 16px;
+	background-color: var(--primary-color-btn);
+	color: #e1e1e1;
+	transition: 0.15s opacity ease;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
 
-.fa-trash-alt:before {
-  color: #205b8d;
+.mainpage #sidebar .add-notebook:hover {
+	opacity: 0.9;
 }
 
-.fa-book:before {
-  color: #e6e6e6;
+.mainpage #sidebar ul li {
+	margin-bottom: 15px;
+	padding-left: 5px;
 }
 
-.notes{
-  display: flex;
-  flex-wrap: wrap;
+.mainpage #sidebar ul li:hover {
+	background-color: rgba(255, 255, 255, 0.1);
 }
 
-.note {
-  background-color: #262626;
-  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1);  
-  margin: 30px 20px;
-  height: 250px;
-  width: 300px;
-  overflow-y: auto;
-  border-radius: 10px;
+.mainpage #sidebar ul li .notebook {
+	width: 100%;
+	display: flex;
 }
 
-.note .tools {
-  background-color: #a0c9da;
-  display: flex;
-  /* justify-content: flex-end; */
-  justify-content: center;
-  padding: 0.5rem;
+.mainpage #sidebar ul li .notebook a {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
-.note .tools .edit {
-  background-color: transparent;
-  border: none;
-  color: rgb(48, 175, 75);
-  cursor: pointer;
-  font-size: 1rem;
-  margin-left: 0.5rem;
+.mainpage #sidebar ul li .notebook .fa-book { 
+	margin-top: auto;
+	margin-bottom: auto;
 }
 
-.note .tools .pinned {
-  background-color: transparent;
-  border: none;
-  color: #205b8d;
-  cursor: pointer;
-  font-size: 1rem;
-  margin-left: 0.5rem;
+.mainpage #sidebar ul li a {
+	display: block;
+	padding: 5px 10px;
 }
 
-.note .tools .cross {
-  background-color: transparent;
-  border: none;
-  color:#111;
-  cursor: pointer;
-  font-size: 1rem;
-  margin-left: 0.5rem;
+.mainpage #sidebar ul li a:first-child {
+	padding: 5px 0px;
 }
 
-.note .tools .delete {
-  background-color: transparent;
-  border: none;
-  color: rgb(228, 28, 28);
-  cursor: pointer;
-  font-size: 1rem;
-  margin-left: 0.5rem;
+.mainpage #sidebar ul li .notebook a:nth-child(1) {
+	width: 70%;
 }
 
-.note input[type=text]{
-  outline: none;
-  font-family: inherit;
-  font-size: 15px;
-  border: none;
-  padding-left: 5px;
-  font-weight: bold;
+.mainpage #sidebar ul li .notebook a:nth-child(2) {
+	width: 70%;
+	margin-right: 5%;
 }
 
-.note textarea {
-  outline: none;
-  /* font-family: inherit; */
-  font-size: 1rem;
-  border: none;
-  /* height: 100%; */
-  height: auto;
-  width: 100%;
-  padding-left: 5px;
-  background: #262626;
-  /* color: white; */
-  color: #e6e6e6;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+.mainpage #sidebar ul li .notebook button {
+	width: 25px;
 }
 
-.hidden {
-  display: none;
+.mainpage #sidebar ul li .notebook button.edit i {
+	color: white;
 }
+
+.mainpage #sidebar ul li .notebook button.delete i {
+	color: #205b8d;
+}
+
+.active-link{
+  background: rgba(255, 255, 255, 0.2);
+}
+/*Notebook Section CSS END*/
+
+#okta-sign-in {
+	margin-top: 20px !important;
+	}

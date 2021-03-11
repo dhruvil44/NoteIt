@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
       },
       features: {
         // Used to enable registration feature on the widget.
+        // https://github.com/okta/okta-signin-widget#feature-flags
          registration: true // REQUIRED
       }
     });

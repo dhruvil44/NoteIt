@@ -1,37 +1,15 @@
-<!--Menu-->
- <!-- <div class="menu"> 
-    <ul>
-        <li><a href="#">NoteIt</a></li>
-        <li><a class="active" href="#">Home</a></li>
-        <li><a href="#">Feedback</a></li>
-        <li> -->
-            <!-- Search Component -->
-            <!-- <app-search></app-search>
-        </li>
-    </ul>
-</div>  -->
-<!--Menu end-->
-
 <header>
     <img src="assets/images/logo.png" alt="noteIt Logo" class="logo-img">
-    <div class="search-bar">
+    <div *ngIf="isAuthenticated" class="search-bar">
         <input type="text" placeholder="Write here" class="search-input" id="search-input">
         <button class="search-btn">Search</button>
     </div>
+    
 </header>
-
 
 
 <app-login-status></app-login-status>
 
-
-
-<!-- <br>
-    <br> -->
-
-
-<!-- <br>
-     <br> -->
 
 
 <!-- Notebook -->

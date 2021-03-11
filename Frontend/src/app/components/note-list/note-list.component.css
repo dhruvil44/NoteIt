@@ -1,0 +1,102 @@
+
+.notes{
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 30px;
+  }
+  
+  .note {
+    background-color: #262626;
+    box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1);  
+    margin: 30px 30px;
+    height: 250px;
+    width: 300px;
+    overflow-y: auto;
+    border-radius: 10px;
+  }
+  
+  .note .tools {
+    background-color: #a0c9da;
+    display: flex;
+    /* justify-content: flex-end; */
+    justify-content: center;
+    padding: 0.5rem;
+  }
+  
+  .note .tools .edit {
+    background-color: transparent;
+    border: none;
+    color: rgb(48, 175, 75);
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+  }
+  
+  .note .tools .pinned {
+    background-color: transparent;
+    border: none;
+    color: #205b8d;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 1rem;
+  }
+  
+  .note .tools .cross {
+    background-color: transparent;
+    border: none;
+    color:#111;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 1rem;
+  }
+  
+  .note .tools .delete {
+    background-color: transparent;
+    border: none;
+    color:#205b8d;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 1rem;
+  }
+  
+  .note input[type=text]{
+    outline: none;
+    font-family: inherit;
+    font-size: 15px;
+    border: none;
+    padding-left: 5px;
+    font-weight: bold;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+  
+  .note textarea {
+    outline: none;
+    /* font-family: inherit; */
+    font-size: 1rem;
+    border: none;
+    /* height: 100%; */
+    height: auto;
+    width: 100%;
+    padding-left: 5px;
+    background: #262626;
+    /* color: white; */
+    color: #e6e6e6;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+  }
+  
+  .hidden {
+    display: none;
+  }
+
+  .addnote {
+    margin-bottom: 30px;
+    margin-left: 60px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: var(--primary-color-btn);
+    color: #e1e1e1;
+    transition: 0.15s opacity ease;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  }

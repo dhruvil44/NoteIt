@@ -1,7 +1,6 @@
 import { Component, OnInit, ɵNOT_FOUND_CHECK_ONLY_ELEMENT_INJECTOR } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { OktaAuthService } from '@okta/okta-angular';
-import { Subject } from 'rxjs';
 import { Note } from 'src/app/model/note';
 import { Notebook } from 'src/app/model/notebook';
 import { NoteService } from 'src/app/services/note.service';

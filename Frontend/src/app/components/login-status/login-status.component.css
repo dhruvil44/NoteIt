@@ -1,26 +1,3 @@
-
-.login-btn, .logout-btn {
-	padding-left: 20px;
-	padding-right: 20px;
-	border-radius: 20px;
-	border-width: 0;
-	outline: none;
-	cursor: pointer;
-	background-color: #04a2b3;
-	color: #e1e1e1;
-	transition: 0.15s opacity ease;
-	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-}
-
-.logout-btn{
-    float: right;
-    margin: 20px;
-}
-
-.login-btn:hover, .logout-btn:hover {
-	opacity: 0.9;
-}
-
 .welcome-text {
 	text-align: center;
 	top: 50%;
@@ -34,20 +11,56 @@
 	font-weight: bold;
 }
 
-.welcome-text .login-btn, .logout-btn{
+
+.login-btn {
+	padding-left: 20px;
+	padding-right: 20px;
+	border-radius: 20px;
+	border-width: 0;
+	outline: none;
+	cursor: pointer;
+	background-color: var(--primary-color-btn);
+	color: #e1e1e1;
+	transition: 0.15s opacity ease;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-text .login-btn{
 	font-size: 18px;
 	padding: 10px 40px;
 }
 
-.auth-container {
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+
+.login-btn:hover {
+	opacity: 0.9;
+}
+
+.logout-btn {
+	padding-left: 20px;
+	padding-right: 20px;
+	border-radius: 20px;
+	border-width: 0;
+	outline: none;
+	cursor: pointer;
+	background-color: var(--primary-color-btn);
+	color: #e1e1e1;
+	transition: 0.15s opacity ease;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+	padding: 10px 40px;
+    margin-bottom: 15px;
 	position: absolute;
+	top: 15px;
+	right: 25px;
 }
 
 .auth-text{
-    color: white;
-    padding: 10px 15px;
-    display: inline-block;
+	position: absolute;
+	top: 25px;
+	right: 200px;
 }
+
+.logout-btn:hover {
+	opacity: 0.9;
+}
+
