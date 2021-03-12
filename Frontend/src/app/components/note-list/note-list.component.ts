@@ -156,8 +156,8 @@ export class NoteListComponent implements OnInit {
     else {
       let newNote: Note = {
         id: null,
-        title: 'New Note',
-        text: 'Write Text Here',
+        title: null,
+        text: null,
         pinned: false,
         email: this.email,
         lastModifiedOn: null
