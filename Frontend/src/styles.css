@@ -11,7 +11,7 @@ body {
 }
 
 :root {
-	--primary-color-btn: #007599;
+	--primary-color-btn: #04a2b3;
 	--header-color: #153b56;
 	--sidebar-color: #131217;
 }
@@ -246,4 +246,9 @@ header .search-bar {
 
 #okta-sign-in {
 	margin-top: 20px !important;
-	}
+}
+
+app-note-list {
+	width: calc(96% - 350px);
+	min-width: 250px;
+}

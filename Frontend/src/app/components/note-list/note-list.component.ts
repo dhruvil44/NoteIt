@@ -28,6 +28,9 @@ export class NoteListComponent implements OnInit {
 
   email: string;
 
+  isExpand: boolean = false;
+
+  selectedNoteForExpand: Note = null;
 
   constructor(private noteService: NoteService,
     private route: ActivatedRoute,
@@ -48,7 +51,11 @@ export class NoteListComponent implements OnInit {
       //getting the url to check whether it is '/all' or not
       this.url = this.router.url;
 
-      console.log(this.email);
+      //initially no notebook is selected for expand
+      this.selectedNoteForExpand=null;
+      //initially isExpand should always be false
+      this.isExpand=false;
+
       this.listNotes();
 
     });
@@ -136,6 +143,7 @@ export class NoteListComponent implements OnInit {
 
     this.noteService.deleteNote(note.id).subscribe();
 
+    this.isExpand=false;
   }
 
   //on creating a new note
@@ -178,6 +186,18 @@ export class NoteListComponent implements OnInit {
   onUnpinNote(note: Note) {
     note.pinned = false;
     this.noteService.saveNote(this.currentNotebookId, note).subscribe();
+  }
+
+  //on Expand a Note
+  onExpandNote(note: Note) {
+    this.isExpand=true;
+    this.selectedNoteForExpand=note;
+  }
+
+  //on Compress/Minimize a Note
+  onCompressNote() {
+    this.isExpand=false;
+    this.selectedNoteForExpand=null;
   }
 
 }

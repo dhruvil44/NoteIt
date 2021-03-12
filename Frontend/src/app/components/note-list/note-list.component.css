@@ -8,12 +8,13 @@
   .note {
     background-color: #262626;
     box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1);  
-    margin: 30px 30px;
+    margin: 30px 28px;
     height: 250px;
     width: 300px;
     overflow-y: auto;
     border-radius: 10px;
   }
+
   
   .note .tools {
     background-color: #a0c9da;
@@ -58,6 +59,15 @@
     font-size: 1rem;
     margin-left: 1rem;
   }
+
+  .note .tools .expand {
+    background-color: transparent;
+    border: none;
+    color:#205b8d;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-right: 1rem;
+  }
   
   .note input[type=text]{
     outline: none;
@@ -73,10 +83,10 @@
   .note textarea {
     outline: none;
     /* font-family: inherit; */
-    font-size: 1rem;
+    font-size: 1rem; 
     border: none;
     /* height: 100%; */
-    height: auto;
+    min-height: 180px;
     width: 100%;
     padding-left: 5px;
     background: #262626;
@@ -100,3 +110,19 @@
     transition: 0.15s opacity ease;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   }
+
+    
+    .expandnote.note {
+    width: 100%;
+    position: relative;
+    height: auto;
+    }
+    
+    .expandnote.note input {
+    width: 100%;
+    }
+    
+    .expandnote.note textarea {
+    width: 100%;
+    height: 500px;
+    }

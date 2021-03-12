@@ -1,33 +1,79 @@
-<button  (click)="onNewNote()" class="addnote" id="addnote">
+<button (click)="onNewNote()" class="addnote" id="addnote">
     <i class="fas fa-plus"></i>
     Add Note
 </button>
- 
+
 <!--Notes-->
-<div  class="notes">
+<div class="notes" *ngIf="!isExpand">
     <div class="note" *ngFor="let note of notes">
-        <div class="tools">     
+        <div class="tools">
+
+            <!-- Expand note  -->
+            <button *ngIf="!isExpand" (click)="onExpandNote(note)" class="expand"><i
+                    class="fas fa-expand-alt"></i></button>
+
             <!--Note tite will be disabled if the Pinned category or All category is selected-->
-            <input [(ngModel)]="note.title" (change)="updateNote(note)" [readOnly]="url=='/all' || currentNotebookId==null "
-                type="text" class="index" placeholder="Title Here" value="{{ note.title }}">
-            
-            <!-- Pinned note  -->
-            <button *ngIf="url!='/all'&& note.pinned==false"
-                   (click)="onPinNote(note)" class="pinned"><i class="fas fa-thumbtack"></i></button>
+            <input [(ngModel)]="note.title" (change)="updateNote(note)"
+                [readOnly]="url=='/all' || currentNotebookId==null " type="text" class="index" placeholder="Title Here"
+                value="{{ note.title }}">
+
+            <!-- Pin note  -->
+            <button *ngIf="url!='/all'&& note.pinned==false" (click)="onPinNote(note)" class="pinned"><i
+                    class="fas fa-thumbtack"></i></button>
 
             <!--Unpin Note-->
-            <button *ngIf="note.pinned==true && (url!='/all' && currentNotebookId!=null)" 
-                    (click)="onUnpinNote(note)" class="cross">
+            <button *ngIf="note.pinned==true && (url!='/all' && currentNotebookId!=null)" (click)="onUnpinNote(note)"
+                class="cross">
                 <i class="fas fa-times"></i></button>
 
+            <!--Delete Note-->
             <button (click)="deleteNote(note)" class="delete"><i class="fas fa-trash-alt"></i></button>
+
         </div>
         <div class="hidden"></div>
+
         <!--Text area will be disabled if the Pinned category or All is selected-->
-        <textarea [(ngModel)]="note.text" (change)="updateNote(note)" placeholder="Welcome to NoteIt"
+        <textarea *ngIf="!isExpand" [(ngModel)]="note.text" (change)="updateNote(note)" placeholder="Welcome to NoteIt"
             [readOnly]="url=='/all' || currentNotebookId==null">
             {{ note.text }}
         </textarea>
+
+
     </div>
+
+
 </div>
 
+
+<!--Expanded Note-->
+<div class="note expandnote" *ngIf="isExpand">
+    <div class="tools">
+        <!-- Compress/Minimize note  -->
+        <button *ngIf="isExpand" (click)="onCompressNote()" class="expand"><i class="fas fa-compress-alt"></i></button>
+
+        <!--Note tite will be disabled if the Pinned category or All category is selected-->
+        <input [(ngModel)]="selectedNoteForExpand.title" (change)="updateNote(selectedNoteForExpand)"
+            [readOnly]="url=='/all' || currentNotebookId==null " type="text" class="index" placeholder="Title Here"
+            value="{{ selectedNoteForExpand.title }}">
+
+        <!-- Pin note  -->
+        <button class="pinned" *ngIf="url!='/all' && selectedNoteForExpand.pinned==false"
+            (click)="onPinNote(selectedNoteForExpand)">
+            <i class="fas fa-thumbtack"></i></button>
+
+        <!--Unpin Note-->
+        <button class="cross" *ngIf="selectedNoteForExpand.pinned==true && (url!='/all' && currentNotebookId!=null)"
+            (click)="onUnpinNote(selectedNoteForExpand)">
+            <i class="fas fa-times"></i></button>
+
+        <!--Delete Note-->
+        <button class="delete" (click)="deleteNote(selectedNoteForExpand)"><i class="fas fa-trash-alt"></i></button>
+
+    </div>
+    <!--Text area will be disabled if the Pinned category or All is selected-->
+    <textarea [(ngModel)]="selectedNoteForExpand.text" (change)="updateNote(selectedNoteForExpand)"
+        placeholder="Welcome to NoteIt" [readOnly]="url=='/all' || currentNotebookId==null">
+    {{ selectedNoteForExpand.text }}
+    </textarea>
+
+</div>

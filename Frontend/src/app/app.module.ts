@@ -20,6 +20,7 @@ import {
   OktaAuthGuard
 } from '@okta/okta-angular';
 
+
 const oktaConfig = Object.assign({
   onAuthRequired: (injector)=>{
     const router = injector.get(Router);
